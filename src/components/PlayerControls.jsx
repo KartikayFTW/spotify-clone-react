@@ -95,6 +95,12 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+
+  @media (max-width: 540px) {
+    width: 80%;
+    gap: 12px;
+  }
+
   svg {
     color: #b3b3b3;
     transition: 0.3s ease-in-out;

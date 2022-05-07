@@ -24,4 +24,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
+  z-index: 9999;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;

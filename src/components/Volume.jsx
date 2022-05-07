@@ -36,4 +36,8 @@ const Container = styled.div`
     border-radius: 2rem;
     height: 0.5rem;
   }
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;

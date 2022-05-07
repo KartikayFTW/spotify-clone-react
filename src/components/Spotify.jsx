@@ -61,6 +61,10 @@ const Container = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-rows: 85vh 15vh;
+  @media (max-width: 880px) {
+    display: grid;
+    grid-template-rows: 85vh 15vh;
+  }
   .spotify_body {
     display: grid;
     grid-template-columns: 15vw 85vw;
@@ -68,6 +72,12 @@ const Container = styled.div`
     width: 100%;
     background: linear-gradient(transparent, rgba(0, 0, 0, 1));
     background-color: rgb(32, 87, 100);
+    @media (max-width: 880px) {
+      grid-template-columns: 2fr 8fr;
+    }
+    @media (max-width: 540px) {
+      grid-template-columns: 2fr 8fr;
+    }
   }
   .body {
     height: 100%;
@@ -79,6 +89,8 @@ const Container = styled.div`
       &-thumb {
         background-color: rgba(58, 56, 56, 0.7);
       }
+    }
+    .body__contents {
     }
   }
 `;

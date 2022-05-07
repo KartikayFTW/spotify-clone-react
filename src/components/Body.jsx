@@ -158,14 +158,16 @@ export default function Body({ headerBackground }) {
                         </div>
                         <div className="info">
                           <span className="name">{name}</span>
-                          <span className="artists">{artists}</span>
+                          <span className="artists">{artists.join(", ")}</span>
                         </div>
                       </div>
                       <div className="col">
-                        <span>{album}</span>
+                        <span className="album">{album}</span>
                       </div>
-                      <div className="col">
-                        <span>{msToMinutesAndSeconds(duration)}</span>
+                      <div className="col ">
+                        <span className="time">
+                          {msToMinutesAndSeconds(duration)}
+                        </span>
                       </div>
                     </div>
                   );
@@ -185,10 +187,19 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
+    /* @media (max-width: 766px) {
+            font-size:10px;
+          } */
     .image {
       img {
         height: 15rem;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+        @media (max-width: 540px) {
+            height: 10rem;
+          }
+        @media (max-width: 400px) {
+            height: 8rem;
+          }
       }
     }
   }
@@ -197,9 +208,26 @@ const Container = styled.div`
     flex-direction: column;
     gap: 1rem;
     color: #e0dede;
+    .type {
+        @media (max-width: 630px) {
+            display: none;
+          }
+    }
     .title {
       color: white;
       font-size: 4rem;
+      @media (max-width: 766px) {
+            font-size:16px;
+          }
+      @media (max-width: 630px) {
+            display: none;
+          }
+    }
+    .description {
+        @media (max-width: 650px) {
+            
+            display: none;
+          }
     }
   }
   .list {
@@ -214,6 +242,12 @@ const Container = styled.div`
       background-color: ${({ headerBackground }) =>
         headerBackground ? "#000000dc" : "none"};
       transition: 0.3s ease-in-out;
+      @media (max-width: 800px) {
+        display: none;
+      }
+      /* @media (max-width: 540px) {
+          width: 100%;
+      } */
     }
     .tracks {
       margin: 0 2rem;
@@ -226,9 +260,23 @@ const Container = styled.div`
       display: grid;
       grid-template-columns: 0.3fr 3.1fr 2.1fr 0.1fr;
       cursor: pointer;
+      @media (max-width: 880px) {
+        gap: 20px;
+      }
+      @media (max-width: 540px) {
+          gap:0;
+      }
+      @media (max-width: 540px) {
+          margin-left: -40px;
+      }
+      /* @media (max-width: 600px) {
+        grid-template-columns: 1/2fr 2fr;
+      } */
 
       &:hover {
         background-color: rgba(0, 0, 0, 0.7);
+      }
+     
       }
       .col {
         display: flex;
@@ -236,15 +284,32 @@ const Container = styled.div`
         color: #dddcdc;
         img {
           height: 40px;
+          
+            @media (max-width: 540px) {
+          height: 10px;
+      }
+        }
+        .album {
+            @media (max-width: 600px) {
+            display: none;
+          }
+        }
+        .time {
+          @media (max-width: 660px) {
+            display: none;
+          }
         }
       }
       .detail {
         display: flex;
         gap: 1rem;
+         
+        }
         .info {
           display: flex;
           flex-direction: column;
         }
+
         /* .artists {
           background-color: red;
           display: flex;
