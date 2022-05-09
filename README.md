@@ -2,7 +2,7 @@
 It is clone of spotify with limited functionality using spotify API and React js.
 In this clone we can change track , pause ,play , control volume and even change playlist.
 playlist are renderd dynamically according to user Login.
-To play the track usin clone we have to once play a song from spotify App or website once.
+To play the track using clone we have to once play a song from spotify App or website once.
 
 # DEMO
 https://reactjs-spotify.netlify.app/
